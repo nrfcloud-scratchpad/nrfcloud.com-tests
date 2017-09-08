@@ -3,7 +3,7 @@ import dotenv = require('dotenv');
 import {blue, red} from 'colors';
 
 dotenv.config();
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+jasmine.DEFAULT_TIMEOUT_INTERVAL = process.env.TIMEOUT || 10000;
 const headless = process.env.HEADLESS !== '0';
 
 export let browser;
