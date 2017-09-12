@@ -18,4 +18,13 @@ pipeline {
             }
         }
     }
+    
+    post {
+        success {
+            slackSend(color: '#36a64f', message: "${JOB_NAME} ${BUILD_DISPLAY_NAME} succeeded after ${currentBuild.durationString}. ${currentBuild.absoluteUrl}")
+        }
+        failure {
+            slackSend(color: '#d00000', message: "${JOB_NAME} ${BUILD_DISPLAY_NAME} failed after ${currentBuild.durationString}! ${currentBuild.absoluteUrl}")
+        }
+    }
 }
