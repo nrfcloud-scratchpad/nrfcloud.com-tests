@@ -1,5 +1,7 @@
 # nrfcloud.com tests
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/nRFCloud/nrfcloud.com-tests.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/nRFCloud/nrfcloud.com-tests.svg?branch=master)](https://travis-ci.org/nRFCloud/nrfcloud.com-tests)
 
 Browser-based tests for [nRFcloud.com](https://nRFcloud.com/).
