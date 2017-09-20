@@ -1,6 +1,7 @@
 # nrfcloud.com tests
 
 [![Build Status](https://travis-ci.org/nRFCloud/nrfcloud.com-tests.svg?branch=master)](https://travis-ci.org/nRFCloud/nrfcloud.com-tests)
+[![Build Status](https://jenkins.nrfcloud.com/buildStatus/icon?job=nrfcloud.com-tests)](https://jenkins.nrfcloud.com/job/nrfcloud.com-tests/)
 
 Browser-based tests for [nRFcloud.com](https://nRFcloud.com/).
 
