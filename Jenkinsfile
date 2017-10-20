@@ -6,6 +6,10 @@ pipeline {
         NRFCLOUD_PASSWORD = credentials('NRFCLOUD_PASSWORD')
     }
     
+    triggers {
+        cron('0 0 * * *')
+    }
+    
     stages {
         stage('install') { 
             steps { 
