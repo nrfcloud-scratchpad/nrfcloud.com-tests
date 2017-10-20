@@ -10,9 +10,8 @@ describe('Login', () => {
         await page.goto(testHost);
         await page.click('nav.unauthorized a:last-child');
         await page.waitForSelector('input[type=email]');
-        await page.type(process.env.NRFCLOUD_LOGIN);
-        await page.keyboard.down('Tab');
-        await page.type(process.env.NRFCLOUD_PASSWORD);
+        await page.type('input[type=email]', process.env.NRFCLOUD_LOGIN);
+        await page.type('input[type=password]', process.env.NRFCLOUD_PASSWORD);
         await page.click('button[type=submit]');
         await page.waitForSelector('section.sidebar a.dashboard');
     });
