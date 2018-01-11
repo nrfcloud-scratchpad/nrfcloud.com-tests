@@ -1,4 +1,5 @@
-import {closeBrowser, launchBrowser, page} from '../helper/browser';
+import { closeBrowser, launchBrowser, page } from '../helper/browser';
+import * as Bluebird from 'bluebird';
 
 beforeAll(launchBrowser);
 afterAll(closeBrowser);
@@ -16,8 +17,19 @@ describe('Login', () => {
         await page.waitForSelector('section.sidebar a.dashboard');
     });
     test('logging out', async () => {
-        const logout = await page.$('nav.navbar a');
+        const profileButton = await page.$('#profile-button');
+        await profileButton.click();
+        const links = page.$$('nav.navbar a');
+        const logout = await Bluebird.try(() => links)
+            .map(l => l.getProperty('innerHTML')
+                .then(v => v.jsonValue())
+                .then(text => text === 'Logout' ? l : undefined)
+            )
+            .filter(l => l)
+            .spread(link => link);
         await logout.click();
+        const confirmButton = await page.$('.modal-dialog *[role=toolbar] button');
+        await confirmButton.click();
         await page.waitForSelector('nav.unauthorized');
     });
 });
