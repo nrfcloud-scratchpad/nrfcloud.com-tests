@@ -1,15 +1,18 @@
 language: node_js
 node_js:
-  - "8"
+  - 8
 cache:
   directories:
-  - "$HOME/.npm"
+  - ~/.npm
 notifications:
   email: false
 before_install:
-  - npm install -g npmc
-  - npmc install -g greenkeeper-lockfile@1
+  - npm install -g npm@
+  - npm install -g greenkeeper-lockfile@1
 install:
-  - npmc ci
+  - npm install
+script:
+  - npm run lint
+  - npm test
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
