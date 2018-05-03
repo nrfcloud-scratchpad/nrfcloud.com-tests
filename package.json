@@ -25,7 +25,7 @@
   "homepage": "https://github.com/nRFCloud/nrfcloud.com-tests#readme",
   "devDependencies": {
     "@types/jest": "^22.1.1",
-    "@types/node": "^9.4.1",
+    "@types/node": "^10.0.3",
     "cypress": "^2.0.4",
     "dotenv": "^5.0.0",
     "husky": "^0.14.3",
