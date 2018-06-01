@@ -26,7 +26,7 @@
   "devDependencies": {
     "@types/jest": "^22.1.1",
     "@types/node": "^10.0.3",
-    "cypress": "^2.0.4",
+    "cypress": "^3.0.1",
     "dotenv": "^5.0.0",
     "husky": "^0.14.3",
     "standard": "^11.0.0",
